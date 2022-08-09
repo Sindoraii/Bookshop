@@ -3,7 +3,7 @@
     const fragmentForScripts = document.createDocumentFragment();
 
     const layout = document.createElement('script');
-    layout.setAttribute('src','common/layout.js');
+    layout.setAttribute('src','built/layout.js');
 
 
     /* the order connecting of scripts */
