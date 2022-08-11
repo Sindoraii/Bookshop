@@ -1,8 +1,14 @@
+@import "built/layout.css";
+
 *, ::before, ::after {
     padding: 0;
     margin: 0;
     border: 0;
     box-sizing: border-box;
+}
+::selection {
+    color: var(--color-primary-dark);
+    background:  var(--color-dark-3xl);
 }
 html {
     height: 100%;
@@ -10,7 +16,7 @@ html {
 body {
     height: 100%;
     font-family: 'Mali',"Comic Sans MS",serif;
-
+    overflow: hidden;
     font-weight: 400;
     font-size: 18px;
     background: var(--color-primary);
@@ -23,6 +29,7 @@ body {
     --color-dark-xl: #4C4C4C;
     --color-dark-2xl: #444444;
     --color-dark-3xl: #292929;
+    --color-primary-dark: orange ;
     --color-primary: rgba(255,203,153);
     --color-primary-light: rgba(252,228,194);
 }
@@ -31,7 +38,7 @@ header {
 }
 h1 {
     line-height: 35.2px;
-    font-size: 32px;
+    font-size: 45px;
     font-family: DynaPuff, sans-serif;
 }
 h2 {

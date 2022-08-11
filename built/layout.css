@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+.logo__text {
+    font-size: 32px;
+    color: coral;
+}
+.menu {
+    display: flex;
+}
+.menu__link {
+    display: flex;
+    align-items: center;
+    margin-right: 32px;
+    font-size: 24px;
+    transition: color 0.5s ease;
+}
+.menu__link:hover {
+    color: var(--color-primary-dark);
+}

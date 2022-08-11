@@ -28,11 +28,14 @@
     header__h1.innerHTML = 'Bookshop';
 
     const menu = document.createElement('nav');
+    menu.className = 'menu';
 
     const link_catalog = document.createElement('a');
+    link_catalog.className = 'menu__link';
     link_catalog.innerHTML = 'Catalog';
 
     const link_bag = document.createElement('a');
+    link_bag.className = 'menu__link';
     link_bag.innerHTML = 'Basket';
 
     const icon_catalog = document.createElement('img');
