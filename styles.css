@@ -1,0 +1,50 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: 'Mali',"Comic Sans MS",serif;
+
+    font-weight: 400;
+    font-size: 18px;
+    background: var(--color-primary);
+    --color-light-xl: #FFFFFF;
+    --color-light-l: #F6F6F6;
+    --color-light-s: #FAFAFA;
+    --color-dark-s: #CDCDCD;
+    --color-dark-m: #B2B2B2;
+    --color-dark-l: #545454;
+    --color-dark-xl: #4C4C4C;
+    --color-dark-2xl: #444444;
+    --color-dark-3xl: #292929;
+    --color-primary: rgba(255,203,153);
+    --color-primary-light: rgba(252,228,194);
+}
+header {
+    background: var(--color-primary-light);
+}
+h1 {
+    line-height: 35.2px;
+    font-size: 32px;
+    font-family: DynaPuff, sans-serif;
+}
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+h3 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}

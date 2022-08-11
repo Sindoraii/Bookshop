@@ -13,8 +13,16 @@
     const header = document.createElement('header');
     header.className = 'header';
 
+    const figureLogo = document.createElement('figure');
+    figureLogo.className = 'logo';
+
     const logo = document.createElement('img');
+    logo.className = 'logo__img';
     logo.setAttribute('src', '../assets/images/logo.png');
+
+    const textLogo = document.createElement('figcaption');
+    textLogo.className = 'logo__text';
+    textLogo.innerText = 'StarFox';
 
     const header__h1 = document.createElement('h1');
     header__h1.innerHTML = 'Bookshop';
@@ -53,7 +61,9 @@
     /* appending relations between elements */
     body.appendChild(root);
 
-    header.appendChild(logo);
+    figureLogo.appendChild(logo);
+    figureLogo.appendChild(textLogo);
+    header.appendChild(figureLogo);
     header.appendChild(header__h1);
 
     link_catalog.prepend(icon_catalog);
