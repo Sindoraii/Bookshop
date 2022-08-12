@@ -44,11 +44,9 @@
     const icon_bag = document.createElement('img');
     icon_bag.setAttribute('src','../assets/icons/bag.png');
 
-
     /* content */
     const content = document.createElement('main');
     content.className = 'content';
-
 
     /* elements for footer */
     const footer = document.createElement('footer');

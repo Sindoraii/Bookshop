@@ -1,30 +1,20 @@
 (function () {
     function Catalog() {
-        /* init */
-        const fragment = document.createDocumentFragment();
+        /* import */
+        const books = window.getData;
+        const BookCard = window.BookCard;
 
+        /* init */
         const catalog = document.createElement('section');
         catalog.className = 'content__catalog';
 
-        function createCard(){
-           fetch('../books.json')
-               .then(response => {
-                   return  response.json();
-               })
-               .then(data => {
-                   const BookCard = window.BookCard; // import
-                   data.forEach(book => {
-                           let card = new BookCard(book);
-                           card.mount(catalog);
-                       })
-               });
-       }
-        createCard();
 
-        fragment.appendChild(catalog);
+        books.forEach(book => {
+            let card = new BookCard(book);
+            card.mount(catalog);
+        })
 
-
-        return fragment;
+        return catalog;
     }
 
     /* export */

@@ -1,7 +1,7 @@
 (function () {
     function BookCard(book) {
         this.book = book;
-    console.log('book in card ',this.book)
+
         /* card elements */
         const card = document.createElement('article');
         card.className = "book-card";
@@ -26,10 +26,8 @@
         description.className = 'book-card__description';
         description.innerHTML = 'Show more';
 
-
         const addToBasketButton  = document.createElement('button');
         addToBasketButton.innerHTML = 'ADD TO BASKET';
-
 
 
         card.appendChild(bookImg);
@@ -40,7 +38,6 @@
         card.appendChild(addToBasketButton);
 
 
-
         /* methods */
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
@@ -49,7 +46,6 @@
                 console.error('BookCard: it is not correct type')
             }
         }
-
     }
 
     /* export */

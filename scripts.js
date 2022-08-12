@@ -18,9 +18,11 @@
     styleLink.setAttribute('rel','stylesheet');
 
     /* scrips of components*/
+    const books = document.createElement('script');
+    books.setAttribute('src', 'books.js');
+
     const layout = document.createElement('script');
     layout.setAttribute('src','built/layout.js');
-
 
     const catalog = document.createElement('script');
     catalog.setAttribute('src','components/catalog/Catalog.js');
@@ -35,6 +37,7 @@
     head.appendChild(commonFonts)
     head.appendChild(styleLink);
 
+    fragmentForScripts.appendChild(books);
     fragmentForScripts.appendChild(bookCard);
     fragmentForScripts.appendChild(catalog);
     fragmentForScripts.appendChild(layout);
