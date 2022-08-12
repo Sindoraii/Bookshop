@@ -21,3 +21,7 @@
 .menu__link:hover {
     color: var(--color-primary-dark);
 }
+.content {
+    display: flex;
+    justify-content: center;
+}

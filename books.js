@@ -73,6 +73,4 @@
     ]
   }
 window.getData = getData();
-
-
 })()

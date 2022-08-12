@@ -1,3 +1,4 @@
+@import "components/catalog/catalogStyles.css";
 @import "built/layout.css";
 
 *, ::before, ::after {
@@ -16,7 +17,6 @@ html {
 body {
     height: 100%;
     font-family: 'Mali',"Comic Sans MS",serif;
-    overflow: hidden;
     font-weight: 400;
     font-size: 18px;
     background: var(--color-primary);

@@ -1,0 +1,9 @@
+.content__catalog {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    max-width: 1800px;
+}
