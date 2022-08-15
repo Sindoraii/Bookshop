@@ -27,6 +27,7 @@
         description.innerHTML = 'Show more';
 
         const addToBasketButton  = document.createElement('button');
+        addToBasketButton.className = 'book-card__button';
         addToBasketButton.innerHTML = 'ADD TO BASKET';
 
 

@@ -1,3 +1,4 @@
+@import "components/catalog/bookCardStyles.css";
 @import "components/catalog/catalogStyles.css";
 @import "built/layout.css";
 
@@ -20,15 +21,8 @@ body {
     font-weight: 400;
     font-size: 18px;
     background: var(--color-primary);
-    --color-light-xl: #FFFFFF;
-    --color-light-l: #F6F6F6;
-    --color-light-s: #FAFAFA;
-    --color-dark-s: #CDCDCD;
-    --color-dark-m: #B2B2B2;
-    --color-dark-l: #545454;
-    --color-dark-xl: #4C4C4C;
-    --color-dark-2xl: #444444;
-    --color-dark-3xl: #292929;
+    --color-dark: darkorange;
+    --color-dark-3xl:#292929;
     --color-primary-dark: orange ;
     --color-primary: rgba(255,203,153);
     --color-primary-light: rgba(252,228,194);
@@ -42,7 +36,7 @@ h1 {
     font-family: DynaPuff, sans-serif;
 }
 h2 {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 600;
 }
 h3 {
