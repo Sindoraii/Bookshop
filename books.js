@@ -1,6 +1,6 @@
 (function () {
   function getData() {
-    return [{
+    return `[{
       "author": "Douglas Crockford",
       "imageLink": "./assets/images/book-1.jpg",
       "title": "JavaScript: The Good Parts: The Good Parts",
@@ -70,7 +70,7 @@
         "price": 33,
         "description": "Secrets of the Javascript Ninja takes you on a journey towards mastering modern JavaScript development in three phases: design, construction, and maintenance. Written for JavaScript developers with intermediate-level skills, this book will give you the knowledge you need to create a cross-browser JavaScript library from the ground up."
       }
-    ]
+    ]`
   }
 window.getData = getData();
 })()

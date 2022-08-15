@@ -9,7 +9,7 @@
 }
 ::selection {
     color: var(--color-primary-dark);
-    background:  var(--color-dark-3xl);
+    background: var(--color-dark-3xl);
 }
 html {
     height: 100%;

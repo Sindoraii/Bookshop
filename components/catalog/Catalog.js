@@ -1,13 +1,14 @@
 (function () {
     function Catalog() {
         /* import */
-        const books = window.getData;
+        const data = window.getData;
         const BookCard = window.BookCard;
 
         /* init */
         const catalog = document.createElement('section');
         catalog.className = 'content__catalog';
 
+        const books = JSON.parse(data);
 
         books.forEach(book => {
             let card = new BookCard(book);
@@ -16,8 +17,6 @@
 
         return catalog;
     }
-
     /* export */
     window.Catalog = new Catalog();
-
 })()
