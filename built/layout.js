@@ -12,6 +12,7 @@
     /* elements for header */
     const header = document.createElement('header');
     header.className = 'header';
+    header.id = 'top';
 
     const figureLogo = document.createElement('figure');
     figureLogo.className = 'logo';
@@ -54,6 +55,7 @@
 
     const footer__slogan = document.createElement('a');
     footer__slogan.innerHTML = 'Read with us';
+    footer__slogan.setAttribute('href','#top');
 
     const footer__p = document.createElement('p');
     footer__p.innerHTML = '© August 2022';

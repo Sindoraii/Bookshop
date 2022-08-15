@@ -25,3 +25,11 @@
     display: flex;
     justify-content: center;
 }
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-primary-dark);
+    padding: 16px;
+}
