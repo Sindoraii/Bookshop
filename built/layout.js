@@ -1,13 +1,14 @@
 (function () {
     /* import */
     const catalog = window.Catalog;
-
+    const basket = window.Basket;
 
     /* init */
     const body = document.getElementsByTagName('body')[0];
     const root = document.createElement('div');
     root.setAttribute('id', 'root');
     const layout = document.createDocumentFragment();
+
 
     /* elements for header */
     const header = document.createElement('header');
@@ -60,6 +61,20 @@
     const footer__p = document.createElement('p');
     footer__p.innerHTML = '© August 2022';
 
+    /* events */
+    link_catalog.addEventListener('click', ()=> {
+        if(!content.contains(catalog.node)) {
+            content.textContent = '';
+            catalog.mount(content);
+        }
+    })
+
+    link_bag.addEventListener('click', ()=> {
+        if(!content.contains(basket.node)) {
+            content.textContent = '';
+            basket.mount(content);
+        }
+    })
 
     /* appending relations between elements */
     body.appendChild(root);
@@ -76,7 +91,7 @@
     header.appendChild(menu);
     layout.appendChild(header);
 
-    content.append(catalog);
+    catalog.mount(content);
     layout.appendChild(content);
 
     footer.prepend(footer__slogan);
@@ -84,4 +99,5 @@
     layout.appendChild(footer);
 
     root.appendChild(layout);
+
 })()

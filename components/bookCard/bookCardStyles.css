@@ -1,3 +1,4 @@
+/* type: large */
 .book-card {
     display: flex;
     flex-direction: column;
@@ -36,3 +37,4 @@
     font-weight: 600;
     cursor: pointer;
 }
+/* type: small */

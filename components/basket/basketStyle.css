@@ -1,0 +1,7 @@
+.content__basket{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 32px;
+    max-width: 1800px;
+}
