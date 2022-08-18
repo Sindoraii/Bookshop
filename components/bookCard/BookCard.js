@@ -41,6 +41,27 @@
 
                 break;
             case 'small':
+                const wrapper = document.createElement('div');
+                wrapper.className = 'basket__wrapper-qty';
+
+                const increaseButton =  document.createElement('button');
+                increaseButton.setAttribute('type','button');
+                increaseButton.className = 'basket__increase-button';
+
+                const counter = document.createElement('p');
+                counter.className = 'basket__counter';
+                counter.innerHTML = '1';
+
+                const decreaseButton =  document.createElement('button');
+                decreaseButton.setAttribute('type','button');
+                decreaseButton.className = 'basket__decrease-button';
+
+                const equelElem  = document.createElement('p');
+                equelElem.innerHTML = '=';
+
+                const sum = document.createElement('p');
+                sum.innerHTML = this.book.price + '$';
+
                 const closeButton = document.createElement('button');
                 closeButton.setAttribute('type','button');
                 closeButton.className = 'basket__close-button';
@@ -48,6 +69,12 @@
                 card.classList.add( "book-card", "book-card_small",'basket__card');
                 bookImg.classList.add('book-card__img','book-card__img_small');
 
+                wrapper.appendChild(increaseButton);
+                wrapper.appendChild(counter);
+                wrapper.appendChild(decreaseButton);
+                wrapper.appendChild(equelElem);
+                wrapper.appendChild(sum);
+                card.appendChild(wrapper);
                 card.appendChild(closeButton);
 
         }

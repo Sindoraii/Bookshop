@@ -49,9 +49,50 @@
     width: 100px;
     height: 150px;
 }
+.basket__wrapper-qty {
+    display: flex;
+    justify-content: flex-end;
+}
+.basket__increase-button {
+    position: relative;
+    margin-left: 3px;
+    width: 24px;
+    height: 24px;
+    background: var(--color-dark);
+}
+.basket__increase-button::before,
+.basket__increase-button::after {
+    content: '';
+    position: absolute;
+    background: var(--color-dark-3xl);
+    width: 10px;
+    height:2px;
+    left: 7px;
+}
+.basket__increase-button::before {
+    transform: rotate(-90deg);
+}
+.basket__increase-button::after {
+    transform: rotate(180deg);
+}
+.basket__decrease-button {
+    position: relative;
+    margin-left: 3px;
+    width: 24px;
+    height: 24px;
+    background: var(--color-dark);
+}
+.basket__decrease-button::before {
+    content: '';
+    position: absolute;
+    background: var(--color-dark-3xl);
+    width: 10px;
+    height:2px;
+    left: 7px;
+}
 .basket__close-button {
     position: absolute;
-    bottom:205px;
+    bottom:224px;
     left: 548px;
     width: 24px;
     height: 24px;
