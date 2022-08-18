@@ -10,13 +10,35 @@
         basket.classList.add('content__basket', 'basket');
         this.node = basket;
 
-        const basketList = document.createElement('section');
-        basketList.classList.add( 'basket__list','list');
+        const list = document.createElement('section');
+        list.classList.add( 'basket__list','list');
+
+        const check = document.createElement("article");
+        check.classList.add( 'basket__check','check');
+
+        const title = document.createElement('h2');
+        title.innerHTML = 'Order Summary';
+
+        const subtotalBox = document.createElement('div');
+        subtotalBox.className = 'check__subtotalBox';
+
+        const total = document.createElement('p');
+        total.className = 'check__total';
+        total.innerHTML = 'Total';
+
+        const totalValue = document.createElement('p');
+        totalValue.className = 'check__total-value';
+        totalValue.innerHTML = '319$'
+
+        const confirmButton = document.createElement('button');
+        confirmButton.className = 'check__confirmButton';
+        confirmButton.innerHTML = 'Confirm order';
+
 
         /*STUB TODO*/
         books.forEach(book => {
             let card = new BookCard(book,'small');
-            card.mount(basketList);
+            card.mount(list);
         })
 
         /* methods */
@@ -28,7 +50,13 @@
             }
         }
 
-        basket.appendChild(basketList);
+        subtotalBox.appendChild(total);
+        subtotalBox.appendChild(totalValue);
+        check.appendChild(title);
+        check.appendChild(subtotalBox);
+        check.appendChild(confirmButton)
+        basket.appendChild(list);
+        basket.appendChild(check);
 
     }
     /* export */
