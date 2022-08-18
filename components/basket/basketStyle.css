@@ -1,7 +1,22 @@
-.content__basket{
+.basket {
     display: flex;
-    flex-direction: column;
     flex-grow: 1;
+}
+.content__basket{
     padding: 32px;
     max-width: 1800px;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+}
+.basket__list {
+    padding-right: 32px;
+}
+.basket__list > article:not(:last-child) {
+    margin-bottom: 16px;
+}
+.basket__card {
+    padding-bottom: 8px;
+    padding-right: 3px;
 }

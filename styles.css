@@ -18,7 +18,7 @@ html {
 }
 body {
     height: 100%;
-    font-family: 'Mali',"Comic Sans MS",serif;
+    font-family: "Comic Sans MS",serif;
     font-weight: 400;
     font-size: 18px;
     background: var(--color-primary);

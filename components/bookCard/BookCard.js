@@ -33,8 +33,6 @@
 
                 card.className = "book-card";
                 bookImg.className = 'book-card__img';
-                author.className = 'book-card__author';
-                title.className = 'book-card__title';
                 description.className = 'book-card__description';
                 addToBasketButton.className = 'book-card__button';
 
@@ -42,6 +40,16 @@
                 card.appendChild(addToBasketButton);
 
                 break;
+            case 'small':
+                const closeButton = document.createElement('button');
+                closeButton.setAttribute('type','button');
+                closeButton.className = 'basket__close-button';
+
+                card.classList.add( "book-card", "book-card_small",'basket__card');
+                bookImg.classList.add('book-card__img','book-card__img_small');
+
+                card.appendChild(closeButton);
+
         }
 
         /* methods */
