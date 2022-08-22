@@ -1,5 +1,8 @@
 (function () {
     function Basket() {
+        /* import */
+        const deliveryForm = window.DeliveryForm;
+
         /* STUB data TODO */
         const data = window.getData;
         const BookCard = window.BookCard;
@@ -46,9 +49,16 @@
             if(parent instanceof HTMLElement) {
                 parent.append(basket);
             } else {
-                console.error('BookCard: it is not correct type')
+                console.error('Basket: parent is not correct type');
             }
         }
+
+        /* events */
+        confirmButton.addEventListener('click',()=>{
+            const main = document.getElementsByTagName('main')[0];
+            main.textContent = '';
+            deliveryForm.mount(main);
+        })
 
         subtotalBox.appendChild(total);
         subtotalBox.appendChild(totalValue);

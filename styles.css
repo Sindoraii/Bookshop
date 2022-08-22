@@ -1,6 +1,7 @@
 @import "components/bookCard/bookCardStyles.css";
 @import "components/catalog/catalogStyles.css";
 @import "components/basket/basketStyle.css";
+@import "components/deliveryForm/deliveryFormStyles.css";
 @import "built/layout.css";
 
 *, ::before, ::after {
