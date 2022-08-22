@@ -107,6 +107,9 @@
         labelForPack.setAttribute('for','gifts-1');
         labelForPack.innerHTML = 'pack';
 
+        const wrapperGifts1 = document.createElement('div');
+        wrapperGifts1.className = 'gifts__wrapper';
+
         const postcard = document.createElement('input');
         postcard.type = 'checkbox';
         postcard.id = 'gifts-2';
@@ -115,6 +118,9 @@
         const labelForPostcard = document.createElement('label');
         labelForPostcard.setAttribute('for','gifts-2');
         labelForPostcard.innerHTML = 'postcard';
+
+        const wrapperGifts2 = document.createElement('div');
+        wrapperGifts2.className = 'gifts__wrapper';
 
         const discount = document.createElement('input');
         discount.type = 'checkbox';
@@ -125,6 +131,9 @@
         labelForDiscount.setAttribute('for','gifts-3');
         labelForDiscount.innerHTML = '2% discount to the next time';
 
+        const wrapperGifts3 = document.createElement('div');
+        wrapperGifts3.className = 'gifts__wrapper';
+
         const pen = document.createElement('input');
         pen.type = 'checkbox';
         pen.id = 'gifts-4';
@@ -133,6 +142,10 @@
         const labelForPen = document.createElement('label');
         labelForPen.setAttribute('for','gifts-4');
         labelForPen.innerHTML = 'branded pen or pencil';
+
+        const wrapperGifts4 = document.createElement('div');
+        wrapperGifts4.className = 'gifts__wrapper';
+
 
         /* complete button */
         const completeButton = document.createElement('input');
@@ -193,15 +206,20 @@
         fieldsetForPayment.appendChild(card);
         fieldsetForPayment.appendChild(labelForCard);
 
+        wrapperGifts1.appendChild(pack);
+        wrapperGifts1.appendChild(labelForPack);
+        wrapperGifts2.appendChild(postcard);
+        wrapperGifts2.appendChild(labelForPostcard);
+        wrapperGifts3.appendChild(discount);
+        wrapperGifts3.appendChild(labelForDiscount);
+        wrapperGifts4.appendChild(pen);
+        wrapperGifts4.appendChild(labelForPen);
+
         fieldsetForGifts.appendChild(gifts);
-        fieldsetForGifts.appendChild(pack);
-        fieldsetForGifts.appendChild(labelForPack);
-        fieldsetForGifts.appendChild(postcard);
-        fieldsetForGifts.appendChild(labelForPostcard);
-        fieldsetForGifts.appendChild(discount);
-        fieldsetForGifts.appendChild(labelForDiscount);
-        fieldsetForGifts.appendChild(pen);
-        fieldsetForGifts.appendChild(labelForPen);
+        fieldsetForGifts.appendChild(wrapperGifts1);
+        fieldsetForGifts.appendChild(wrapperGifts2);
+        fieldsetForGifts.appendChild(wrapperGifts3);
+        fieldsetForGifts.appendChild(wrapperGifts4);
 
         form.appendChild(userInfo);
         form.appendChild(fieldsetForPayment);

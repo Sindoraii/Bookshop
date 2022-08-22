@@ -37,7 +37,6 @@
         confirmButton.className = 'check__confirmButton';
         confirmButton.innerHTML = 'Confirm order';
 
-
         /*STUB TODO*/
         books.forEach(book => {
             let card = new BookCard(book,'small');
@@ -67,7 +66,6 @@
         check.appendChild(confirmButton)
         basket.appendChild(list);
         basket.appendChild(check);
-
     }
     /* export */
     window.Basket = new Basket();
