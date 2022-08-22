@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     flex-grow: 1;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 32px;
     max-width: 1800px;
 }
