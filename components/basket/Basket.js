@@ -34,7 +34,7 @@
         totalValue.innerHTML = '319$'
 
         const confirmButton = document.createElement('button');
-        confirmButton.className = 'check__confirmButton';
+        confirmButton.classList.add('check__confirmButton','button');
         confirmButton.innerHTML = 'Confirm order';
 
         /*STUB TODO*/

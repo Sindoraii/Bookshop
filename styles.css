@@ -46,10 +46,21 @@ h3 {
     font-style: italic;
     font-size: 16px;
 }
-
 a {
     text-decoration: none;
     cursor: pointer;
     color: black;
 }
-
+label {
+    font-size: 20px;
+}
+legend {
+    font-size: 22px;
+    font-weight: 600;
+}
+.button {
+    padding: 8px;
+    font-family: "Comic Sans MS",serif;
+    font-weight: 600;
+    cursor: pointer;
+}

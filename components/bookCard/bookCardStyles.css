@@ -31,10 +31,6 @@
 }
 .book-card__button {
     background-color: var(--color-dark);
-    padding: 8px;
-    font-family: 'Mali',"Comic Sans MS",serif;
-    font-weight: 600;
-    cursor: pointer;
 }
 /* type: small */
 .book-card_small {

@@ -34,7 +34,8 @@
                 card.className = "book-card";
                 bookImg.className = 'book-card__img';
                 description.className = 'book-card__description';
-                addToBasketButton.className = 'book-card__button';
+                // addToBasketButton.className = 'book-card__button';
+                addToBasketButton.classList.add('button','book-card__button');
 
                 card.appendChild(description);
                 card.appendChild(addToBasketButton);
