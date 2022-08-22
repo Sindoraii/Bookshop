@@ -21,6 +21,7 @@
     const logo = document.createElement('img');
     logo.className = 'logo__img';
     logo.setAttribute('src', './assets/images/logo.png');
+    logo.setAttribute('draggable','false');
 
     const textLogo = document.createElement('figcaption');
     textLogo.className = 'logo__text';
@@ -42,9 +43,11 @@
 
     const icon_catalog = document.createElement('img');
     icon_catalog.setAttribute('src','./assets/icons/book.png');
+    icon_catalog.setAttribute('draggable','false');
 
     const icon_bag = document.createElement('img');
     icon_bag.setAttribute('src','./assets/icons/bag.png');
+    icon_bag.setAttribute('draggable','false');
 
     /* content */
     const content = document.createElement('main');
