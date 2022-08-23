@@ -1,3 +1,6 @@
+.header__title {
+    padding: 4px 32px 4px 4px;
+}
 .delivery-form {
     background: var(--color-primary-light);
     display: flex;

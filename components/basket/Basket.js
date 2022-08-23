@@ -33,7 +33,8 @@
         totalValue.className = 'check__total-value';
         totalValue.innerHTML = '319$'
 
-        const confirmButton = document.createElement('button');
+        const confirmButton = document.createElement('a');
+        confirmButton.setAttribute('href','components/deliveryForm/deliveryForm.html');
         confirmButton.classList.add('check__confirmButton','button');
         confirmButton.innerHTML = 'Confirm order';
 
@@ -51,13 +52,6 @@
                 console.error('Basket: parent is not correct type');
             }
         }
-
-        /* events */
-        confirmButton.addEventListener('click',()=>{
-            const main = document.getElementsByTagName('main')[0];
-            main.textContent = '';
-            deliveryForm.mount(main);
-        })
 
         subtotalBox.appendChild(total);
         subtotalBox.appendChild(totalValue);
