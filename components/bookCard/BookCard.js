@@ -1,5 +1,8 @@
 (function () {
     function BookCard(book,type) { // type: 'long' , 'small'
+        /* import */
+        const DescPopup = window.Description;
+
         this.book = book;
 
         /* card elements */
@@ -31,11 +34,17 @@
                 const addToBasketButton  = document.createElement('button');
                 addToBasketButton.innerHTML = 'ADD TO BASKET';
 
+                const popup = new DescPopup(this.book.description);
+                const body = document.getElementsByTagName('body')[0];
+
                 card.className = "book-card";
                 bookImg.className = 'book-card__img';
                 description.className = 'book-card__description';
-                // addToBasketButton.className = 'book-card__button';
                 addToBasketButton.classList.add('button','book-card__button');
+
+                description.addEventListener('click',()=> {
+                  popup.mount(body);
+                });
 
                 card.appendChild(description);
                 card.appendChild(addToBasketButton);
@@ -65,7 +74,7 @@
 
                 const closeButton = document.createElement('button');
                 closeButton.setAttribute('type','button');
-                closeButton.className = 'basket__close-button';
+                closeButton.classList.add('close-button','basket__close-button');
 
                 card.classList.add( "book-card", "book-card_small",'basket__card');
                 bookImg.classList.add('book-card__img','book-card__img_small');
@@ -77,9 +86,7 @@
                 wrapper.appendChild(sum);
                 card.appendChild(wrapper);
                 card.appendChild(closeButton);
-
         }
-
         /* methods */
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
@@ -89,7 +96,6 @@
             }
         }
     }
-
     /* export */
     window.BookCard = BookCard;
 })()
