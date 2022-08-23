@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Details</title>
+    <link href=" https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap;" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" id="top">
+        <figure class="logo">
+            <img class="logo__img" src="../../assets/images/logo.png" draggable="false">
+            <figcaption class="logo__text">StarFox</figcaption>
+        </figure>
+        <h1 class="header__title">Bookshop</h1>
+    </header>
+    <main class="content">
+        <form class="content__delivery-form delivery-form" id="deliveryForm" action="#">
+            <h2 class="delivery-form__title">Delivery Details</h2>
+            <fieldset class="delivery-form__userInfo userInfo" name="userInfo">
+                <legend class="userInfo__title"> Contacts:</legend>
+                <label for="userName">Name:</label>
+                <input class="userInfo__input" type="text" id="userName">
+                <label for="userSurname">Surname:</label>
+                <input class="userInfo__input" type="text" id="userSurname">
+                <label for="deliveryDate">Delivery date:</label>
+                <input class="userInfo__input" id="deliveryDate" type="date" min="2022-08-23">
+                <label for="street">Street:</label>
+                <input class="userInfo__input" type="text" id="street"><label for="houseNumber">House number:</label>
+                <input class="userInfo__input" type="number" min="1" id="houseNumber">
+            </fieldset>
+            <fieldset class="delivery-form__payment payment">
+                <legend class="payment__title">Choose the payment type:</legend>
+                <input class="payment__input-radio" type="radio" id="payment-1" name="payment">
+                <label for="payment-1" class="payment__label">Cash</label>
+                <input class="payment__input-radio" type="radio" id="payment-2" name="payment">
+                <label for="payment-2" class="payment__label">Card</label>
+            </fieldset>
+            <fieldset class="delivery-form__gifts gifts">
+                <legend class="gifts__title">Choose 2 gifts:</legend>
+                <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-1" name="gifts">
+                    <label for="gifts-1">pack</label>
+                </div>
+                <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-2" name="gifts">
+                    <label for="gifts-2">postcard</label>
+                </div>
+                <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-3" name="gifts">
+                    <label for="gifts-3">2% discount to the next time</label>
+                </div>
+                <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-4" name="gifts">
+                    <label for="gifts-4">branded pen or pencil</label>
+                </div>
+            </fieldset>
+            <input class="delivery-form__complete button" type="submit" value = 'Complete'>
+        </form>
+    </main>
+    <footer class="footer">
+        <a href="#top">Read with us</a>
+        <p>© August 2022</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.content__catalog {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px;
+    max-width: 1800px;
+}
+.content__catalog > * {
+    margin-bottom: 8px;
+}

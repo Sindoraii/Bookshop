@@ -1,0 +1,53 @@
+.basket {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+.content__basket{
+    padding: 32px;
+    max-width: 1800px;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+}
+.basket__list {
+    padding-right: 32px;
+}
+.basket__list > article:not(:last-child) {
+    margin-bottom: 16px;
+}
+.basket__card {
+    padding-bottom: 3px;
+    padding-right: 3px;
+}
+.check {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-primary-light);
+    position: sticky;
+    top:3px;
+    height: min-content;
+}
+.basket__check {
+    padding: 8px;
+}
+.basket__check > :not(:last-child) {
+    padding-bottom: 8px;
+}
+.check__subtotalBox {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+.check__total {
+    padding-left: 0;
+}
+.check__confirmButton {
+    font-size: 20px;
+    background: var(--color-primary-dark);
+    letter-spacing: 0.1em;
+}
+.check__confirmButton:hover {
+    outline: 1px solid black;
+}

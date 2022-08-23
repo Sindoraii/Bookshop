@@ -1,0 +1,66 @@
+@import "components/bookCard/bookCardStyles.css";
+@import "components/catalog/catalogStyles.css";
+@import "components/basket/basketStyle.css";
+@import "components/deliveryForm/deliveryFormStyles.css";
+@import "built/layout.css";
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+::selection {
+    color: var(--color-primary-dark);
+    background: var(--color-dark-3xl);
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    font-family: "Comic Sans MS",serif;
+    font-weight: 400;
+    font-size: 18px;
+    background: var(--color-primary);
+    --color-dark: darkorange;
+    --color-dark-3xl:#292929;
+    --color-primary-dark: orange ;
+    --color-primary: rgba(255,203,153);
+    --color-primary-light: rgba(252,228,194);
+}
+header {
+    background: var(--color-primary-light);
+}
+h1 {
+    line-height: 35.2px;
+    font-size: 45px;
+    font-family: DynaPuff, sans-serif;
+}
+h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+h3 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 16px;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+label {
+    font-size: 20px;
+}
+legend {
+    font-size: 22px;
+    font-weight: 600;
+}
+.button {
+    padding: 8px;
+    font-family: "Comic Sans MS",serif;
+    font-weight: 600;
+    cursor: pointer;
+}

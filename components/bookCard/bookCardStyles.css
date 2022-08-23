@@ -1,0 +1,112 @@
+/* type: large */
+.book-card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: box-shadow 0.5s;
+    background: var(--color-primary-light);
+}
+.book-card:hover {
+    box-shadow: -4px -4px 10px 2px coral, 4px 4px 10px 2px var(--color-primary-dark);
+}
+.book-card > h3,h2,p {
+    padding-left: 3px;
+}
+.book-card > p {
+    padding-top: 3px;
+}
+.book-card__img {
+    width: 300px;
+    height: 400px;
+}
+.book-card__description {
+    margin: 8px 8px 16px 8px;
+    cursor: help;
+    width: max-content;
+}
+.book-card__description:hover {
+    text-decoration: 1px solid black underline;
+}
+.book-card__button {
+    background-color: var(--color-dark);
+}
+/* type: small */
+.book-card_small {
+    position: relative;
+    flex-basis: 200px;
+    transition: none;
+}
+.book-card_small:hover {
+ box-shadow: none;
+}
+.book-card__img_small {
+    width: 100px;
+    height: 150px;
+}
+.basket__wrapper-qty {
+    display: flex;
+    justify-content: flex-end;
+}
+.basket__increase-button {
+    position: relative;
+    margin-left: 3px;
+    width: 24px;
+    height: 24px;
+    background: var(--color-dark);
+}
+.basket__increase-button::before,
+.basket__increase-button::after {
+    content: '';
+    position: absolute;
+    background: var(--color-dark-3xl);
+    width: 10px;
+    height:2px;
+    left: 7px;
+}
+.basket__increase-button::before {
+    transform: rotate(-90deg);
+}
+.basket__increase-button::after {
+    transform: rotate(180deg);
+}
+.basket__decrease-button {
+    position: relative;
+    margin-left: 3px;
+    width: 24px;
+    height: 24px;
+    background: var(--color-dark);
+}
+.basket__decrease-button::before {
+    content: '';
+    position: absolute;
+    background: var(--color-dark-3xl);
+    width: 10px;
+    height:2px;
+    left: 7px;
+}
+.basket__close-button {
+    position: absolute;
+    bottom:224px;
+    left: 548px;
+    width: 24px;
+    height: 24px;
+    background: var(--color-dark-3xl);
+}
+.basket__close-button::before,
+.basket__close-button::after {
+    position: absolute;
+    content: '';
+    top: 10px;
+    left: 0;
+    width: 24px;
+    height: 4px;
+    background: var(--color-primary-dark);
+}
+.basket__close-button::before {
+    transform: rotate(-45deg);
+}
+.basket__close-button::after {
+    transform: rotate(45deg);
+}
