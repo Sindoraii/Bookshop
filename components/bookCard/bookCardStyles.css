@@ -50,8 +50,8 @@
     justify-content: flex-end;
 }
 .basket__close-button {
-    bottom: 224px;
-    left: 548px;
+    top:1%;
+    right: 1%;
 }
 .basket__increase-button {
     position: relative;
