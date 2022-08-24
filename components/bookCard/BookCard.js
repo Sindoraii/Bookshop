@@ -2,6 +2,7 @@
     function BookCard(book,type) { // type: 'long' , 'small'
         /* import */
         const DescPopup = window.Description;
+        const basket = window.Basket;
 
         this.book = book;
 
@@ -44,6 +45,11 @@
 
                 description.addEventListener('click',()=> {
                   popup.mount(body);
+                });
+
+                /* event */
+                addToBasketButton.addEventListener('click',()=>{
+                    basket.update(this.book);
                 });
 
                 card.appendChild(description);

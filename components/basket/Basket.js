@@ -1,17 +1,12 @@
 (function () {
     function Basket() {
-        /* import */
-        const deliveryForm = window.DeliveryForm;
-
-        /* STUB data TODO */
-        const data = window.getData;
+        this.books = [];
+        this.booksInBasket = [];
         const BookCard = window.BookCard;
-        const books = JSON.parse(data);
 
         /* init */
         const basket = document.createElement('section');
         basket.classList.add('content__basket', 'basket');
-        this.node = basket;
 
         const list = document.createElement('section');
         list.classList.add( 'basket__list','list');
@@ -38,20 +33,34 @@
         confirmButton.classList.add('check__confirmButton','button');
         confirmButton.innerHTML = 'Confirm order';
 
-        /*STUB TODO*/
-        books.forEach(book => {
-            let card = new BookCard(book,'small');
-            card.mount(list);
-        })
 
         /* methods */
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
+                createBookCard(this.books);
                 parent.append(basket);
+                this.books = [];
             } else {
                 console.error('Basket: parent is not correct type');
             }
         }
+
+        this.update = (data) =>{
+            if(!this.books.includes(data) && !this.booksInBasket.includes(data)) {
+                this.books.push(data);
+                this.booksInBasket.push(data);
+            }
+        }
+
+
+        /* private methods */
+        function createBookCard(arr) {
+            arr.forEach((book)=> {
+                let card = new BookCard(book,'small');
+                card.mount(list);
+            })
+        }
+
 
         subtotalBox.appendChild(total);
         subtotalBox.appendChild(totalValue);
