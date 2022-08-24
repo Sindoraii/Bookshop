@@ -67,6 +67,7 @@
                 const counter = document.createElement('p');
                 counter.className = 'basket__counter';
                 counter.innerHTML = '1';
+                let counterNumber = Number(counter.innerHTML);
 
                 const decreaseButton =  document.createElement('button');
                 decreaseButton.setAttribute('type','button');
@@ -76,6 +77,7 @@
                 equelElem.innerHTML = '=';
 
                 const sum = document.createElement('p');
+                sum.className = 'basket__sum';
                 sum.innerHTML = this.book.price + '$';
 
                 const closeButton = document.createElement('button');
@@ -84,6 +86,21 @@
 
                 card.classList.add( "book-card", "book-card_small",'basket__card');
                 bookImg.classList.add('book-card__img','book-card__img_small');
+
+                /* events */
+                increaseButton.addEventListener('click',()=>{
+                    counterNumber++;
+                    counter.innerHTML = String(counterNumber);
+                    sum.innerHTML = String(this.book.price * counterNumber) + '$';
+                })
+                decreaseButton.addEventListener('click',()=>{
+                    if(counterNumber > 1) {
+                        let sumNumber = parseInt(sum.innerHTML);
+                        counterNumber--;
+                        counter.innerHTML = String(counterNumber);
+                        sum.innerHTML = String( sumNumber - this.book.price) + '$';
+                    }
+                })
 
                 wrapper.appendChild(increaseButton);
                 wrapper.appendChild(counter);
