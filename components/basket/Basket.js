@@ -26,7 +26,7 @@
 
         const totalValue = document.createElement('p');
         totalValue.className = 'check__total-value';
-        totalValue.innerHTML = '319$'
+        totalValue.innerHTML = '0';
 
         const confirmButton = document.createElement('a');
         confirmButton.setAttribute('href','components/deliveryForm/deliveryForm.html');
@@ -39,17 +39,27 @@
             if(parent instanceof HTMLElement) {
                 createBookCard(this.books);
                 parent.append(basket);
+                setTotal(this.books);
                 this.books = [];
+
             } else {
                 console.error('Basket: parent is not correct type');
             }
         }
 
-        this.update = (data) =>{
+        this.updateBasketList = (data) =>{
             if(!this.books.includes(data) && !this.booksInBasket.includes(data)) {
                 this.books.push(data);
                 this.booksInBasket.push(data);
             }
+        }
+
+        this.decreaseTotal = (price) => {
+            totalValue.innerHTML = String(parseInt(totalValue.innerHTML) - price)+ "$";
+        }
+
+        this.increaseTotal = (price) => {
+            totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + price) + "$";
         }
 
 
@@ -59,6 +69,13 @@
                 let card = new BookCard(book,'small');
                 card.mount(list);
             })
+        }
+        function setTotal(arr) {
+            if(list.hasChildNodes()) {
+                arr.forEach((book) => {
+                    totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + book.price ) + '$';
+                })
+            }
         }
 
 

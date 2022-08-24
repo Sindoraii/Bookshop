@@ -49,7 +49,7 @@
 
                 /* event */
                 addToBasketButton.addEventListener('click',()=>{
-                    basket.update(this.book);
+                    basket.updateBasketList(this.book);
                 });
 
                 card.appendChild(description);
@@ -92,6 +92,8 @@
                     counterNumber++;
                     counter.innerHTML = String(counterNumber);
                     sum.innerHTML = String(this.book.price * counterNumber) + '$';
+                    basket.increaseTotal(this.book.price);
+
                 })
                 decreaseButton.addEventListener('click',()=>{
                     if(counterNumber > 1) {
@@ -99,6 +101,7 @@
                         counterNumber--;
                         counter.innerHTML = String(counterNumber);
                         sum.innerHTML = String( sumNumber - this.book.price) + '$';
+                        basket.decreaseTotal(this.book.price);
                     }
                 })
 
