@@ -88,6 +88,14 @@
                 bookImg.classList.add('book-card__img','book-card__img_small');
 
                 /* events */
+                closeButton.addEventListener('click', () => {
+                    let card = closeButton.parentNode;
+                    let sumNode = card.querySelector('.basket__sum');
+                    let sum = parseInt(sumNode.innerHTML);
+                    basket.decreaseTotal(sum);
+                    card.remove();
+                })
+
                 increaseButton.addEventListener('click',()=>{
                     counterNumber++;
                     counter.innerHTML = String(counterNumber);
