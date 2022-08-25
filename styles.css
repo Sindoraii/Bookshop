@@ -15,6 +15,9 @@
     color: var(--color-primary-dark);
     background: var(--color-dark-3xl);
 }
+body,html,#root {
+    height: 100%;
+}
 body {
     font-family: "Comic Sans MS",serif;
     font-weight: 400;

@@ -70,13 +70,18 @@
                 card.mount(list);
             })
         }
+
         function setTotal(arr) {
-            if(list.hasChildNodes()) {
+            if (list.hasChildNodes()) {
+                basket.appendChild(check);
                 arr.forEach((book) => {
-                    totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + book.price ) + '$';
+                    totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + book.price) + '$';
                 })
             }
         }
+
+
+
 
 
         subtotalBox.appendChild(total);
@@ -85,7 +90,11 @@
         check.appendChild(subtotalBox);
         check.appendChild(confirmButton)
         basket.appendChild(list);
-        basket.appendChild(check);
+
+        // if( ) {
+        //     basket.appendChild(check);
+        // }
+
     }
     /* export */
     window.Basket = new Basket();
