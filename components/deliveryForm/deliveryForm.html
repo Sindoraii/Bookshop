@@ -8,7 +8,6 @@
     <link href="../../styles.css" rel="stylesheet">
 </head>
 <body>
-
     <header class="header" id="top">
         <figure class="logo">
             <img class="logo__img" src="../../assets/images/logo.png" draggable="false">
@@ -18,47 +17,63 @@
     </header>
     <div class="wrapper">
     <main class="content">
-        <form class="content__delivery-form delivery-form" id="deliveryForm" action="#">
+        <form class="content__delivery-form delivery-form" id="deliveryForm" action="#" name="delivery">
             <h2 class="delivery-form__title">Delivery Details</h2>
             <fieldset class="delivery-form__userInfo userInfo" name="userInfo">
                 <legend class="userInfo__title"> Contacts:</legend>
-                <label for="userName">Name:</label>
-                <input class="userInfo__input" type="text" id="userName">
-                <label for="userSurname">Surname:</label>
-                <input class="userInfo__input" type="text" id="userSurname">
+                <div class="error-wrapper">
+                    <label for="userName">Name:</label>
+                    <input class="userInfo__input" type="text" id="userName" name="name">
+                </div>
+                <div class="error-wrapper">
+                    <label for="userSurname" class="surname-label">Surname:</label>
+                    <input class="userInfo__input" type="text" id="userSurname" name="surname">
+                </div>
                 <label for="deliveryDate">Delivery date:</label>
-                <input class="userInfo__input" id="deliveryDate" type="date" min="2022-08-23">
-                <label for="street">Street:</label>
-                <input class="userInfo__input" type="text" id="street"><label for="houseNumber">House number:</label>
-                <input class="userInfo__input" type="number" min="1" id="houseNumber">
+                <input class="userInfo__input" id="deliveryDate" type="date" name="date">
+
+                <div class="error-wrapper">
+                    <label for="street">Street:</label>
+                    <input class="userInfo__input" type="text" id="street" name="street">
+                </div>
+                <div class="error-wrapper">
+                    <label for="houseNumber">House number:</label>
+                    <input class="userInfo__input" type="number" min="1" id="houseNumber" name="houseNumber">
+                </div>
+                <div class="error-wrapper">
+                    <label for="flatNumber">Flat number:</label>
+                    <input class="userInfo__input" type="text" id="flatNumber" name="flatNumber">
+                </div>
             </fieldset>
             <fieldset class="delivery-form__payment payment">
                 <legend class="payment__title">Choose the payment type:</legend>
-                <input class="payment__input-radio" type="radio" id="payment-1" name="payment">
+                <input class="payment__input-radio" type="radio" id="payment-1" name="payment-cash">
                 <label for="payment-1" class="payment__label">Cash</label>
-                <input class="payment__input-radio" type="radio" id="payment-2" name="payment">
+                <input class="payment__input-radio" type="radio" id="payment-2" name="payment-card">
                 <label for="payment-2" class="payment__label">Card</label>
             </fieldset>
-            <fieldset class="delivery-form__gifts gifts">
+            <fieldset class="delivery-form__gifts gifts ">
                 <legend class="gifts__title">Choose 2 gifts:</legend>
-                <div class="gifts__wrapper">
-                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-1" name="gifts">
+                <div class="error-wrapper" >
+                    <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-1" name="gifts-1">
                     <label for="gifts-1">pack</label>
-                </div>
-                <div class="gifts__wrapper">
-                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-2" name="gifts">
+                    </div>
+                    <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-2" name="gifts-2">
                     <label for="gifts-2">postcard</label>
-                </div>
-                <div class="gifts__wrapper">
-                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-3" name="gifts">
+                    </div>
+                    <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-3" name="gifts-3">
                     <label for="gifts-3">2% discount to the next time</label>
-                </div>
-                <div class="gifts__wrapper">
-                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-4" name="gifts">
+                    </div>
+                    <div class="gifts__wrapper">
+                    <input class="gifts__input-checkbox" type="checkbox" id="gifts-4" name="gifts-4">
                     <label for="gifts-4">branded pen or pencil</label>
+                    </div>
                 </div>
             </fieldset>
-            <input class="delivery-form__complete button" type="submit" value = 'Complete'>
+            <input class="delivery-form__complete button" type="submit" value = 'Complete' disabled>
         </form>
     </main>
     </div>
@@ -66,5 +81,6 @@
         <a href="#top">Read with us</a>
         <p>© August 2022</p>
     </footer>
+    <script src="deliveryFormValidation.js"></script>
 </body>
 </html>

@@ -18,6 +18,14 @@
     text-align: center;
     font-weight: 600;
 }
+.error-wrapper {
+   display: flex;
+    flex-direction: column;
+}
+.error-wrapper::after {
+    content: attr(data-error-message);
+    color: red;
+}
 .userInfo {
     display: flex;
     flex-direction: column;
@@ -60,4 +68,11 @@
 }
 .delivery-form__complete:hover {
     outline: 1px solid var(--color-dark-3xl);
+}
+.invalid {
+    outline: 1px solid red;
+}
+.error-text {
+    color: red;
+    padding: 3px;
 }
