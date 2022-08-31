@@ -9,6 +9,8 @@
         const street = form.elements['street'];
         const house = form.elements['houseNumber'];
         const flat = form.elements['flatNumber'];
+        const payment = form.getElementsByClassName('payment')[0];
+
 
         form.addEventListener('focus', (event) => stopValidation(event.target), true);
         form.addEventListener('blur', (event) => startValidation(event.target), true);
@@ -30,6 +32,9 @@
                     break;
                 case 'flatNumber':
                     isPositiveNumberWithDashSymbol(flat);
+                    break;
+                case 'payment':
+                    checkPayment(payment);
                     break;
                 case 'gifts-1':
                     checkCountOfGifts();
@@ -147,6 +152,18 @@
             }
         }
 
+        function checkPayment(elem){
+            let checkedInputs = elem.querySelectorAll('input[type=radio]:checked');
+            const wrapperError = elem.getElementsByClassName('error-wrapper')[0];
+            if(checkedInputs.length === 0) {
+                elem.classList.add('invalid');
+                wrapperError.setAttribute('data-error-message', '*This field is required');
+            } else {
+                elem.classList.remove('invalid');
+                wrapperError.setAttribute('data-error-message', '');
+            }
+        }
+
        function checkCountOfGifts() {
             const fieldset = document.getElementsByClassName('delivery-form__gifts')[0];
             const wrapperError = fieldset.getElementsByClassName('error-wrapper')[0];
@@ -160,7 +177,7 @@
                wrapperError.setAttribute('data-error-message', `*Only 2 gifts are available`);
            }
         }
-        
+
     }
     deliveryFormValidation();
 })()

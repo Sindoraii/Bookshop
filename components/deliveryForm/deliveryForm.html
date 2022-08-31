@@ -47,14 +47,20 @@
             </fieldset>
             <fieldset class="delivery-form__payment payment">
                 <legend class="payment__title">Choose the payment type:</legend>
-                <input class="payment__input-radio" type="radio" id="payment-1" name="payment-cash">
-                <label for="payment-1" class="payment__label">Cash</label>
-                <input class="payment__input-radio" type="radio" id="payment-2" name="payment-card">
-                <label for="payment-2" class="payment__label">Card</label>
+                <div class="error-wrapper">
+                    <div class="payment__wrapper">
+                        <input class="payment__input-radio" type="radio" id="payment-1" name="payment">
+                        <label for="payment-1" class="payment__label">Cash</label>
+                    </div>
+                    <div class="payment__wrapper">
+                        <input class="payment__input-radio" type="radio" id="payment-2" name="payment">
+                        <label for="payment-2" class="payment__label">Card</label>
+                    </div>
+                </div>
             </fieldset>
             <fieldset class="delivery-form__gifts gifts ">
                 <legend class="gifts__title">Choose 2 gifts:</legend>
-                <div class="error-wrapper" >
+                <div class="error-wrapper">
                     <div class="gifts__wrapper">
                     <input class="gifts__input-checkbox" type="checkbox" id="gifts-1" name="gifts-1">
                     <label for="gifts-1">pack</label>
