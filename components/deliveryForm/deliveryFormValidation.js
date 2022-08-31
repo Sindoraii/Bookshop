@@ -152,16 +152,15 @@
             const wrapperError = fieldset.getElementsByClassName('error-wrapper')[0];
             const checkboxes = wrapperError.querySelectorAll('input[type=checkbox]:checked');
 
-           if(checkboxes.length === 2 ) {
+            if(checkboxes.length  === 2 ) {
                fieldset.classList.remove('invalid');
                wrapperError.setAttribute('data-error-message', ``);
-           } else if((0 <= checkboxes.length ) || (checkboxes.length > 2)) {
+           } else if( checkboxes.length > 2) {
                fieldset.classList.add('invalid');
                wrapperError.setAttribute('data-error-message', `*Only 2 gifts are available`);
            }
         }
-
-
+        
     }
     deliveryFormValidation();
 })()
