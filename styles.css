@@ -3,6 +3,7 @@
 @import "components/descriptionPopup/descriptionPopup.css";
 @import "components/basket/basketStyle.css";
 @import "components/deliveryForm/deliveryFormStyles.css";
+@import "components/deliveryForm/deliveryFormSummary/deliveryFormSummary.css";
 @import "built/layout.css";
 
 *, ::before, ::after {

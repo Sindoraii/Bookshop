@@ -126,7 +126,7 @@
             if(parent instanceof HTMLElement) {
                 parent.append(card);
             } else {
-                console.error('BookCard: parent is not correct type')
+                console.error('BookCard: parent is not correct')
             }
         }
     }

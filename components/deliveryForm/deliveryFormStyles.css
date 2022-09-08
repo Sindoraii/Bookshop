@@ -66,13 +66,14 @@
     width: 50%;
     margin-top: 24px;
 }
+.delivery-form__complete:disabled {
+    color: white;
+    background-color: var(--color-dark-3xl);
+    cursor: not-allowed;
+}
 .delivery-form__complete:hover {
     outline: 1px solid var(--color-dark-3xl);
 }
 .invalid {
     outline: 1px solid red;
-}
-.error-text {
-    color: red;
-    padding: 3px;
 }
