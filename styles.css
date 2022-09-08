@@ -1,7 +1,9 @@
 @import "components/bookCard/bookCardStyles.css";
 @import "components/catalog/catalogStyles.css";
+@import "components/descriptionPopup/descriptionPopup.css";
 @import "components/basket/basketStyle.css";
 @import "components/deliveryForm/deliveryFormStyles.css";
+@import "components/deliveryForm/deliveryFormSummary/deliveryFormSummary.css";
 @import "built/layout.css";
 
 *, ::before, ::after {
@@ -14,11 +16,10 @@
     color: var(--color-primary-dark);
     background: var(--color-dark-3xl);
 }
-html {
+body,html,#root {
     height: 100%;
 }
 body {
-    height: 100%;
     font-family: "Comic Sans MS",serif;
     font-weight: 400;
     font-size: 18px;
@@ -63,4 +64,27 @@ legend {
     font-family: "Comic Sans MS",serif;
     font-weight: 600;
     cursor: pointer;
+}
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: var(--color-dark-3xl);
+}
+.close-button::before,
+.close-button::after {
+    position: absolute;
+    content: '';
+    top: 10px;
+    left: 0;
+    width: 24px;
+    height: 4px;
+    background: var(--color-primary-dark);
+}
+.close-button::before {
+    transform: rotate(-45deg);
+}
+.close-button::after {
+    transform: rotate(45deg);
 }

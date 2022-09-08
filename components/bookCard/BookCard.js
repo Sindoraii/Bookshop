@@ -1,5 +1,9 @@
 (function () {
     function BookCard(book,type) { // type: 'long' , 'small'
+        /* import */
+        const DescPopup = window.Description;
+        const basket = window.Basket;
+
         this.book = book;
 
         /* card elements */
@@ -31,11 +35,22 @@
                 const addToBasketButton  = document.createElement('button');
                 addToBasketButton.innerHTML = 'ADD TO BASKET';
 
+                const popup = new DescPopup(this.book.description);
+                const body = document.getElementsByTagName('body')[0];
+
                 card.className = "book-card";
                 bookImg.className = 'book-card__img';
                 description.className = 'book-card__description';
-                // addToBasketButton.className = 'book-card__button';
                 addToBasketButton.classList.add('button','book-card__button');
+
+                description.addEventListener('click',()=> {
+                  popup.mount(body);
+                });
+
+                /* event */
+                addToBasketButton.addEventListener('click',()=>{
+                    basket.updateBasketList(this.book);
+                });
 
                 card.appendChild(description);
                 card.appendChild(addToBasketButton);
@@ -52,6 +67,7 @@
                 const counter = document.createElement('p');
                 counter.className = 'basket__counter';
                 counter.innerHTML = '1';
+                let counterNumber = Number(counter.innerHTML);
 
                 const decreaseButton =  document.createElement('button');
                 decreaseButton.setAttribute('type','button');
@@ -61,14 +77,41 @@
                 equelElem.innerHTML = '=';
 
                 const sum = document.createElement('p');
+                sum.className = 'basket__sum';
                 sum.innerHTML = this.book.price + '$';
 
                 const closeButton = document.createElement('button');
                 closeButton.setAttribute('type','button');
-                closeButton.className = 'basket__close-button';
+                closeButton.classList.add('close-button','basket__close-button');
 
                 card.classList.add( "book-card", "book-card_small",'basket__card');
                 bookImg.classList.add('book-card__img','book-card__img_small');
+
+                /* events */
+                closeButton.addEventListener('click', () => {
+                    let card = closeButton.parentNode;
+                    let sumNode = card.querySelector('.basket__sum');
+                    let sum = parseInt(sumNode.innerHTML);
+                    basket.decreaseTotal(sum);
+                    card.remove();
+                })
+
+                increaseButton.addEventListener('click',()=>{
+                    counterNumber++;
+                    counter.innerHTML = String(counterNumber);
+                    sum.innerHTML = String(this.book.price * counterNumber) + '$';
+                    basket.increaseTotal(this.book.price);
+
+                })
+                decreaseButton.addEventListener('click',()=>{
+                    if(counterNumber > 1) {
+                        let sumNumber = parseInt(sum.innerHTML);
+                        counterNumber--;
+                        counter.innerHTML = String(counterNumber);
+                        sum.innerHTML = String( sumNumber - this.book.price) + '$';
+                        basket.decreaseTotal(this.book.price);
+                    }
+                })
 
                 wrapper.appendChild(increaseButton);
                 wrapper.appendChild(counter);
@@ -77,19 +120,16 @@
                 wrapper.appendChild(sum);
                 card.appendChild(wrapper);
                 card.appendChild(closeButton);
-
         }
-
         /* methods */
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
                 parent.append(card);
             } else {
-                console.error('BookCard: parent is not correct type')
+                console.error('BookCard: parent is not correct')
             }
         }
     }
-
     /* export */
     window.BookCard = BookCard;
 })()

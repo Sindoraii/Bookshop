@@ -1,17 +1,12 @@
 (function () {
     function Basket() {
-        /* import */
-        const deliveryForm = window.DeliveryForm;
-
-        /* STUB data TODO */
-        const data = window.getData;
+        this.books = [];
+        this.booksInBasket = [];
         const BookCard = window.BookCard;
-        const books = JSON.parse(data);
 
         /* init */
         const basket = document.createElement('section');
         basket.classList.add('content__basket', 'basket');
-        this.node = basket;
 
         const list = document.createElement('section');
         list.classList.add( 'basket__list','list');
@@ -31,27 +26,63 @@
 
         const totalValue = document.createElement('p');
         totalValue.className = 'check__total-value';
-        totalValue.innerHTML = '319$'
+        totalValue.innerHTML = '0';
 
         const confirmButton = document.createElement('a');
         confirmButton.setAttribute('href','components/deliveryForm/deliveryForm.html');
         confirmButton.classList.add('check__confirmButton','button');
         confirmButton.innerHTML = 'Confirm order';
 
-        /*STUB TODO*/
-        books.forEach(book => {
-            let card = new BookCard(book,'small');
-            card.mount(list);
-        })
 
         /* methods */
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
+                createBookCard(this.books);
                 parent.append(basket);
+                setTotal(this.books);
+                this.books = [];
+
             } else {
                 console.error('Basket: parent is not correct type');
             }
         }
+
+        this.updateBasketList = (data) =>{
+            if(!this.books.includes(data) && !this.booksInBasket.includes(data)) {
+                this.books.push(data);
+                this.booksInBasket.push(data);
+            }
+        }
+
+        this.decreaseTotal = (price) => {
+            totalValue.innerHTML = String(parseInt(totalValue.innerHTML) - price)+ "$";
+        }
+
+        this.increaseTotal = (price) => {
+            totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + price) + "$";
+        }
+
+
+        /* private methods */
+        function createBookCard(arr) {
+            arr.forEach((book)=> {
+                let card = new BookCard(book,'small');
+                card.mount(list);
+            })
+        }
+
+        function setTotal(arr) {
+            if (list.hasChildNodes()) {
+                basket.appendChild(check);
+                arr.forEach((book) => {
+                    totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + book.price) + '$';
+                })
+            }
+        }
+
+
+
+
 
         subtotalBox.appendChild(total);
         subtotalBox.appendChild(totalValue);
@@ -59,7 +90,11 @@
         check.appendChild(subtotalBox);
         check.appendChild(confirmButton)
         basket.appendChild(list);
-        basket.appendChild(check);
+
+        // if( ) {
+        //     basket.appendChild(check);
+        // }
+
     }
     /* export */
     window.Basket = new Basket();

@@ -49,6 +49,10 @@
     display: flex;
     justify-content: flex-end;
 }
+.basket__close-button {
+    top:1%;
+    right: 1%;
+}
 .basket__increase-button {
     position: relative;
     margin-left: 3px;
@@ -86,27 +90,4 @@
     height:2px;
     left: 7px;
 }
-.basket__close-button {
-    position: absolute;
-    bottom:224px;
-    left: 548px;
-    width: 24px;
-    height: 24px;
-    background: var(--color-dark-3xl);
-}
-.basket__close-button::before,
-.basket__close-button::after {
-    position: absolute;
-    content: '';
-    top: 10px;
-    left: 0;
-    width: 24px;
-    height: 4px;
-    background: var(--color-primary-dark);
-}
-.basket__close-button::before {
-    transform: rotate(-45deg);
-}
-.basket__close-button::after {
-    transform: rotate(45deg);
-}
+
