@@ -75,7 +75,7 @@
             if (list.hasChildNodes()) {
                 basket.appendChild(check);
                 arr.forEach((book) => {
-                    totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + book.price) + '$';
+                    totalValue.innerHTML = `${parseInt(totalValue.innerHTML) + book.price}$`;
                 })
             }
         }
