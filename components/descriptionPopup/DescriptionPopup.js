@@ -3,16 +3,16 @@
         this.text = text;
 
         const wrapper = document.createElement('div');
-        wrapper.className = 'modals';
+        wrapper.classList.add('modals');
 
         const backgroundForModals = document.createElement('div');
-        backgroundForModals.className = 'modals__background';
+        backgroundForModals.classList.add('modals__background');
 
         const popup = document.createElement('article');
         popup.classList.add( 'modals__description-popup','popup');
 
         const desc = document.createElement('p');
-        desc.className = 'popup__text';
+        desc.classList.add('popup__text');
         desc.innerHTML = this.text;
 
         const closeButton = document.createElement('button');

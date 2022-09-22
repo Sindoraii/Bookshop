@@ -18,14 +18,14 @@
         title.innerHTML = 'Order Summary';
 
         const subtotalBox = document.createElement('div');
-        subtotalBox.className = 'check__subtotalBox';
+        subtotalBox.classList.add('check__subtotalBox');
 
         const total = document.createElement('p');
-        total.className = 'check__total';
+        total.classList.add('check__total');
         total.innerHTML = 'Total';
 
         const totalValue = document.createElement('p');
-        totalValue.className = 'check__total-value';
+        totalValue.classList.add('check__total-value');
         totalValue.innerHTML = '0';
 
         const confirmButton = document.createElement('a');

@@ -6,7 +6,7 @@
 
         /* init */
         const catalog = document.createElement('section');
-        catalog.className = 'content__catalog';
+        catalog.classList.add('content__catalog');
         this.node = catalog;
 
         const books = JSON.parse(data);

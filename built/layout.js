@@ -12,33 +12,33 @@
 
     /* elements for header */
     const header = document.createElement('header');
-    header.className = 'header';
+    header.classList.add('header');
     header.id = 'top';
 
     const figureLogo = document.createElement('figure');
-    figureLogo.className = 'logo';
+    figureLogo.classList.add('logo');
 
     const logo = document.createElement('img');
-    logo.className = 'logo__img';
+    logo.classList.add('logo__img');
     logo.setAttribute('src', './assets/images/logo.png');
     logo.setAttribute('draggable','false');
 
     const textLogo = document.createElement('figcaption');
-    textLogo.className = 'logo__text';
+    textLogo.classList.add('logo__text');
     textLogo.innerText = 'StarFox';
 
     const header__h1 = document.createElement('h1');
     header__h1.innerHTML = 'Bookshop';
 
     const menu = document.createElement('nav');
-    menu.className = 'menu';
+    menu.classList.add('menu');
 
     const link_catalog = document.createElement('a');
-    link_catalog.className = 'menu__link';
+    link_catalog.classList.add('menu__link');
     link_catalog.innerHTML = 'Catalog';
 
     const link_bag = document.createElement('a');
-    link_bag.className = 'menu__link';
+    link_bag.classList.add('menu__link');
     link_bag.innerHTML = 'Basket';
 
     const icon_catalog = document.createElement('img');
@@ -51,11 +51,11 @@
 
     /* content */
     const content = document.createElement('main');
-    content.className = 'content';
+    content.classList.add('content');
 
     /* elements for footer */
     const footer = document.createElement('footer');
-    footer.className = 'footer';
+    footer.classList.add('footer');
 
     const footer__slogan = document.createElement('a');
     footer__slogan.innerHTML = 'Read with us';

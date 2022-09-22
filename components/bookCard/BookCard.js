@@ -38,9 +38,9 @@
                 const popup = new DescPopup(this.book.description);
                 const body = document.getElementsByTagName('body')[0];
 
-                card.className = "book-card";
-                bookImg.className = 'book-card__img';
-                description.className = 'book-card__description';
+                card.classList.add("book-card");
+                bookImg.classList.add('book-card__img');
+                description.classList.add('book-card__description');
                 addToBasketButton.classList.add('button','book-card__button');
 
                 description.addEventListener('click',()=> {
@@ -58,26 +58,26 @@
                 break;
             case 'small':
                 const wrapper = document.createElement('div');
-                wrapper.className = 'basket__wrapper-qty';
+                wrapper.classList.add('basket__wrapper-qty');
 
                 const increaseButton =  document.createElement('button');
                 increaseButton.setAttribute('type','button');
-                increaseButton.className = 'basket__increase-button';
+                increaseButton.classList.add('basket__increase-button');
 
                 const counter = document.createElement('p');
-                counter.className = 'basket__counter';
+                counter.classList.add('basket__counter');
                 counter.innerHTML = '1';
                 let counterNumber = Number(counter.innerHTML);
 
                 const decreaseButton =  document.createElement('button');
                 decreaseButton.setAttribute('type','button');
-                decreaseButton.className = 'basket__decrease-button';
+                decreaseButton.classList.add('basket__decrease-button');
 
                 const equelElem  = document.createElement('p');
                 equelElem.innerHTML = '=';
 
                 const sum = document.createElement('p');
-                sum.className = 'basket__sum';
+                sum.classList.add('basket__sum');
                 sum.innerHTML = this.book.price + '$';
 
                 const closeButton = document.createElement('button');

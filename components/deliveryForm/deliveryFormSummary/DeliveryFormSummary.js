@@ -2,10 +2,10 @@
     function DeliveryFormSummary(obj) {
         /* init */
         const elem = document.createElement('section');
-        elem.className = 'content__summary summary';
+        elem.classList.add('content__summary summary');
 
         const h2 = document.createElement('h2');
-        h2.className = 'summary__h2';
+        h2.classList.add('summary__h2');
         h2.innerHTML = 'Information about order';
 
         const textSuccessfulOrder = document.createElement('p');
