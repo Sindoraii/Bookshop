@@ -14,11 +14,10 @@
         const street = form.elements['street'];
         const house = form.elements['houseNumber'];
         const flat = form.elements['flatNumber'];
-
-
         const gifts =  Array.from(form.elements['gifts']);
-        gifts.forEach((item)=> item.addEventListener('click',(e)=>checkCountGifts(e)))
 
+
+        gifts.forEach((item)=> item.addEventListener('click',(e)=>checkCountGifts(e)))
 
         form.addEventListener('focus', (event) => stopValidation(event.target), true);
 
@@ -63,7 +62,6 @@
             error.setAttribute('data-error-message','');
             target.classList.remove('invalid');
         }
-
 
         function checkStringWithoutNumber(elem) {
             if(!elem.validity.valid) {
@@ -167,7 +165,6 @@
             arr.forEach((item)=> item.checked ? id = item.id:null);
              return id;
         }
-
 
         function getSummary() {
             let paymentType = null;

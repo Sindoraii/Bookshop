@@ -33,7 +33,6 @@
         confirmButton.classList.add('check__confirmButton','button');
         confirmButton.innerHTML = 'Confirm order';
 
-
         /* methods */
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
@@ -46,6 +45,7 @@
                 console.error('Basket: parent is not correct type');
             }
         }
+
 
         this.updateBasketList = (data) =>{
             if(!this.books.includes(data) && !this.booksInBasket.includes(data)) {
@@ -81,19 +81,12 @@
         }
 
 
-
-
-
         subtotalBox.appendChild(total);
         subtotalBox.appendChild(totalValue);
         check.appendChild(title);
         check.appendChild(subtotalBox);
         check.appendChild(confirmButton)
         basket.appendChild(list);
-
-        // if( ) {
-        //     basket.appendChild(check);
-        // }
 
     }
     /* export */

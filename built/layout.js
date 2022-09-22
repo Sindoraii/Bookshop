@@ -9,7 +9,6 @@
     root.setAttribute('id', 'root');
     const layout = document.createDocumentFragment();
 
-
     /* elements for header */
     const header = document.createElement('header');
     header.classList.add('header');
@@ -27,27 +26,27 @@
     textLogo.classList.add('logo__text');
     textLogo.innerText = 'StarFox';
 
-    const header__h1 = document.createElement('h1');
-    header__h1.innerHTML = 'Bookshop';
+    const headerH1 = document.createElement('h1');
+    headerH1.innerHTML = 'Bookshop';
 
     const menu = document.createElement('nav');
     menu.classList.add('menu');
 
-    const link_catalog = document.createElement('a');
-    link_catalog.classList.add('menu__link');
-    link_catalog.innerHTML = 'Catalog';
+    const linkCatalog = document.createElement('a');
+    linkCatalog.classList.add('menu__link');
+    linkCatalog.innerHTML = 'Catalog';
 
-    const link_bag = document.createElement('a');
-    link_bag.classList.add('menu__link');
-    link_bag.innerHTML = 'Basket';
+    const linkBag = document.createElement('a');
+    linkBag.classList.add('menu__link');
+    linkBag.innerHTML = 'Basket';
 
-    const icon_catalog = document.createElement('img');
-    icon_catalog.setAttribute('src','./assets/icons/book.png');
-    icon_catalog.setAttribute('draggable','false');
+    const iconCatalog = document.createElement('img');
+    iconCatalog.setAttribute('src','./assets/icons/book.png');
+    iconCatalog.setAttribute('draggable','false');
 
-    const icon_bag = document.createElement('img');
-    icon_bag.setAttribute('src','./assets/icons/bag.png');
-    icon_bag.setAttribute('draggable','false');
+    const iconBag = document.createElement('img');
+    iconBag.setAttribute('src','./assets/icons/bag.png');
+    iconBag.setAttribute('draggable','false');
 
     /* content */
     const content = document.createElement('main');
@@ -57,22 +56,22 @@
     const footer = document.createElement('footer');
     footer.classList.add('footer');
 
-    const footer__slogan = document.createElement('a');
-    footer__slogan.innerHTML = 'Read with us';
-    footer__slogan.setAttribute('href','#top');
+    const footerSlogan = document.createElement('a');
+    footerSlogan.innerHTML = 'Read with us';
+    footerSlogan.setAttribute('href','#top');
 
-    const footer__p = document.createElement('p');
-    footer__p.innerHTML = '© August 2022';
+    const footerP = document.createElement('p');
+    footerP.innerHTML = '© August 2022';
 
     /* events */
-    link_catalog.addEventListener('click', ()=> {
+    linkCatalog.addEventListener('click', ()=> {
         if(!content.contains(catalog.node)) {
             content.textContent = '';
             catalog.mount(content);
         }
     })
 
-    link_bag.addEventListener('click', ()=> {
+    linkBag.addEventListener('click', ()=> {
         if(!content.contains(basket.node)) {
             content.textContent = '';
             basket.mount(content);
@@ -85,22 +84,21 @@
     figureLogo.appendChild(logo);
     figureLogo.appendChild(textLogo);
     header.appendChild(figureLogo);
-    header.appendChild(header__h1);
+    header.appendChild(headerH1);
 
-    link_catalog.prepend(icon_catalog);
-    link_bag.prepend(icon_bag);
-    menu.appendChild(link_catalog);
-    menu.appendChild(link_bag);
+    linkCatalog.prepend(iconCatalog);
+    linkBag.prepend(iconBag);
+    menu.appendChild(linkCatalog);
+    menu.appendChild(linkBag);
     header.appendChild(menu);
     layout.appendChild(header);
 
     catalog.mount(content);
     layout.appendChild(content);
 
-    footer.prepend(footer__slogan);
-    footer.appendChild(footer__p);
+    footer.prepend(footerSlogan);
+    footer.appendChild(footerP);
     layout.appendChild(footer);
 
     root.appendChild(layout);
-
 })()
