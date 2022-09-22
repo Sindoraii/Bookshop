@@ -55,11 +55,11 @@
         }
 
         this.decreaseTotal = (price) => {
-            totalValue.innerHTML = String(parseInt(totalValue.innerHTML) - price)+ "$";
+            totalValue.innerHTML = `${parseInt(totalValue.innerHTML) - price}$`;
         }
 
         this.increaseTotal = (price) => {
-            totalValue.innerHTML = String(parseInt(totalValue.innerHTML) + price) + "$";
+            totalValue.innerHTML = `${parseInt(totalValue.innerHTML) + price}$`;
         }
 
 
