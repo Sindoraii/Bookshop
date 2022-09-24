@@ -1,7 +1,6 @@
 (function () {
     /* import */
-    const catalog = window.Catalog;
-    const basket = window.Basket;
+    const view = window.ViewManager;
 
     /* init */
     const body = document.getElementsByTagName('body')[0];
@@ -65,17 +64,11 @@
 
     /* events */
     linkCatalog.addEventListener('click', ()=> {
-        if(!content.contains(catalog.node)) {
-            content.textContent = '';
-            catalog.mount(content);
-        }
+        view.changeView("catalog");
     })
 
     linkBag.addEventListener('click', ()=> {
-        if(!content.contains(basket.node)) {
-            content.textContent = '';
-            basket.mount(content);
-        }
+        view.changeView('basket');
     })
 
     /* appending relations between elements */
@@ -93,7 +86,7 @@
     header.appendChild(menu);
     layout.appendChild(header);
 
-    catalog.mount(content);
+    view.mount(content,'catalog')
     layout.appendChild(content);
 
     footer.prepend(footerSlogan);
