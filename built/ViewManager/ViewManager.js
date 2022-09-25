@@ -33,6 +33,7 @@
         this.changeView = (view) => {
             if(currentView !== view) {
                 if(Object.keys(views).includes(view)) {
+                    views[currentView].unmount();
                     currentView = view;
                     elem.textContent = " ";
                     views[view].mount(elem);

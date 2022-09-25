@@ -2,7 +2,8 @@
     function BookCard(book,type) { // type: 'long' , 'small'
         /* import */
         const DescPopup = window.Description;
-        const basket = window.Basket;
+        const basketManager = window.BasketManager;
+        // const basket = window.Basket;
 
         this.book = book;
 
@@ -48,7 +49,7 @@
 
             /* event */
             addToBasketButton.addEventListener('click', () => {
-                basket.updateBasketList(this.book);
+                basketManager.update(this.book);
             });
 
             card.appendChild(description);
@@ -90,7 +91,7 @@
                 let card = closeButton.parentNode;
                 let sumNode = card.querySelector('.basket__sum');
                 let sum = parseInt(sumNode.innerHTML);
-                basket.decreaseTotal(sum);
+                // basket.decreaseTotal(sum);
                 card.remove();
             })
 
@@ -98,7 +99,7 @@
                 counterNumber++;
                 counter.innerHTML = String(counterNumber);
                 sum.innerHTML = String(this.book.price * counterNumber) + '$';
-                basket.increaseTotal(this.book.price);
+                // basket.increaseTotal(this.book.price);
 
             })
             decreaseButton.addEventListener('click', () => {
@@ -107,7 +108,7 @@
                     counterNumber--;
                     counter.innerHTML = String(counterNumber);
                     sum.innerHTML = String(sumNumber - this.book.price) + '$';
-                    basket.decreaseTotal(this.book.price);
+                    // basket.decreaseTotal(this.book.price);
                 }
             })
 

@@ -1,8 +1,9 @@
 (function () {
     function Basket() {
-        this.books = [];
-        this.booksInBasket = [];
+
+        /* import */
         const BookCard = window.BookCard;
+        const basketManager = window.BasketManager;
 
         /* init */
         const basket = document.createElement('section');
@@ -34,24 +35,25 @@
         confirmButton.innerHTML = 'Confirm order';
 
         /* methods */
+        this.update = (books) => {
+            createBookCard(books);
+            basket.appendChild(list);
+            setTotal(books);
+        }
+
         this.mount = (parent) => {
             if(parent instanceof HTMLElement) {
-                createBookCard(this.books);
-                parent.append(basket);
-                setTotal(this.books);
-                this.books = [];
-
+                basketManager.subscribe(this.update);
+                parent.appendChild(basket);
             } else {
                 console.error('Basket: parent is not correct type');
             }
         }
 
-
-        this.updateBasketList = (data) =>{
-            if(!this.books.includes(data) && !this.booksInBasket.includes(data)) {
-                this.books.push(data);
-                this.booksInBasket.push(data);
-            }
+        this.unmount = () => {
+            list.textContent = "";
+            basketManager.unsubscribe(this.update);
+            basket.textContent = '';
         }
 
         this.decreaseTotal = (price) => {
@@ -86,8 +88,6 @@
         check.appendChild(title);
         check.appendChild(subtotalBox);
         check.appendChild(confirmButton)
-        basket.appendChild(list);
-
     }
     /* export */
     window.Basket = new Basket();

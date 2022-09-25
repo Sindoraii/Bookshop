@@ -7,7 +7,6 @@
         /* init */
         const catalog = document.createElement('section');
         catalog.classList.add('content__catalog');
-        this.node = catalog;
 
         const books = JSON.parse(data);
 
@@ -21,8 +20,12 @@
             if(parent instanceof HTMLElement) {
                 parent.append(catalog);
             } else {
-                console.error('BookCard: it is not correct type')
+                console.error('Catalog: it is not correct type')
             }
+        }
+
+        this.unmount = () => {
+            catalog.remove();
         }
     }
     /* export */
