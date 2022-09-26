@@ -4,13 +4,17 @@
         let listeners = [];
 
         /* methods */
-        this.update = (book) => {
+        this.addBook = (book) => {
             let result = books.find((item) => book.title === item.title && book.author === item.author);
-
             if(result === undefined) {
                 books.push(book);
                 notifyListeners();
             }
+        }
+
+        this.deleteBook = (book) => {
+            books = books.filter((item) => item.title !== book.title && item.author !== book.author)
+            notifyListeners();
         }
 
         this.subscribe = (listener) => {
@@ -31,7 +35,6 @@
                 listener(books);
             })
         }
-
     }
     /* export */
     window.BasketManager = new BasketManager();

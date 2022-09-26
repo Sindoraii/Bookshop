@@ -49,7 +49,7 @@
 
             /* event */
             addToBasketButton.addEventListener('click', () => {
-                basketManager.update(this.book);
+                basketManager.addBook(this.book);
             });
 
             card.appendChild(description);
@@ -88,11 +88,7 @@
 
             /* events */
             closeButton.addEventListener('click', () => {
-                let card = closeButton.parentNode;
-                let sumNode = card.querySelector('.basket__sum');
-                let sum = parseInt(sumNode.innerHTML);
-                // basket.decreaseTotal(sum);
-                card.remove();
+                basketManager.deleteBook(this.book);
             })
 
             increaseButton.addEventListener('click', () => {

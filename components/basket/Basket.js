@@ -1,6 +1,5 @@
 (function () {
     function Basket() {
-
         /* import */
         const BookCard = window.BookCard;
         const basketManager = window.BasketManager;
@@ -35,10 +34,16 @@
         confirmButton.innerHTML = 'Confirm order';
 
         /* methods */
-        this.update = (books) => {
-            createBookCard(books);
-            basket.appendChild(list);
-            setTotal(books);
+        this.update = (books) => { // books type is array
+            basket.textContent = '';
+            list.textContent = "";
+            totalValue.innerHTML = '0';
+
+            if (books.length !== 0) {
+                createBookCard(books);
+                basket.appendChild(list);
+                setTotal(books);
+            }
         }
 
         this.mount = (parent) => {
@@ -54,6 +59,7 @@
             list.textContent = "";
             basketManager.unsubscribe(this.update);
             basket.textContent = '';
+            totalValue.innerHTML = '0';
         }
 
         this.decreaseTotal = (price) => {
@@ -72,6 +78,7 @@
                 card.mount(list);
             })
         }
+
 
         function setTotal(arr) {
             if (list.hasChildNodes()) {
