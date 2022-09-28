@@ -49,7 +49,8 @@
 
             /* event */
             addToBasketButton.addEventListener('click', () => {
-                basketManager.addBook(this.book);
+                // basketManager.addBook(this.book);
+                basketManager.addBookRecords(this.book);
             });
 
             card.appendChild(description);
@@ -88,22 +89,36 @@
 
             /* events */
             closeButton.addEventListener('click', () => {
-                basketManager.deleteBook(this.book);
+                // basketManager.deleteBook(this.book);
+                basketManager.deleteBookRecord(this.book);
+
             })
 
             increaseButton.addEventListener('click', () => {
                 counterNumber++;
                 counter.innerHTML = String(counterNumber);
-                sum.innerHTML = String(this.book.price * counterNumber) + '$';
+                sum.innerHTML = `${this.book.price * counterNumber}$`;
+                console.log('counter',counterNumber);
+                console.log('sum',sum)
+                basketManager.increase(this.book);
+
+
+                // basketManager.updateCost(this.book,parseInt(sum.innerHTML));
+                // basketManager.updateCost(this.book.price,'increase');
+
                 // basket.increaseTotal(this.book.price);
 
             })
+
             decreaseButton.addEventListener('click', () => {
                 if (counterNumber > 1) {
                     let sumNumber = parseInt(sum.innerHTML);
                     counterNumber--;
                     counter.innerHTML = String(counterNumber);
-                    sum.innerHTML = String(sumNumber - this.book.price) + '$';
+                    sum.innerHTML = `${sumNumber - this.book.price}$`;
+                    basketManager.decrease(this.book);
+
+                    // basketManager.updateCost(this.book.price,'decrease');
                     // basket.decreaseTotal(this.book.price);
                 }
             })
