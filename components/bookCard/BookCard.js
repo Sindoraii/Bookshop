@@ -3,32 +3,30 @@
         /* import */
         const DescPopup = window.Description;
         const basketManager = window.BasketManager;
-        // const basket = window.Basket;
 
         this.book = book;
-
-        /* card elements */
         const card = document.createElement('article');
 
-        const bookImg = document.createElement('img');
-        bookImg.setAttribute('src', this.book.imageLink);
-        bookImg.setAttribute('alt','book image');
-
-        const author = document.createElement('h3');
-        author.innerHTML = this.book.author;
-
-        const title = document.createElement('h2');
-        title.innerHTML = this.book.title;
-
-        const price = document.createElement('p');
-        price.innerHTML = this.book.price + '$';
-
-        card.appendChild(bookImg);
-        card.appendChild(title);
-        card.appendChild(author);
-        card.appendChild(price);
-
         if (type === 'long') {
+            /* card elements for the catalog */
+            const bookImg = document.createElement('img');
+            bookImg.setAttribute('src', this.book.imageLink);
+            bookImg.setAttribute('alt','book image');
+
+            const author = document.createElement('h3');
+            author.innerHTML = this.book.author;
+
+            const title = document.createElement('h2');
+            title.innerHTML = this.book.title;
+
+            const price = document.createElement('p');
+            price.innerHTML = this.book.price + '$';
+
+            card.appendChild(bookImg);
+            card.appendChild(title);
+            card.appendChild(author);
+            card.appendChild(price);
+
             const description = document.createElement('a');
             description.innerHTML = 'Show more';
 
@@ -49,7 +47,6 @@
 
             /* event */
             addToBasketButton.addEventListener('click', () => {
-                // basketManager.addBook(this.book);
                 basketManager.addBookRecords(this.book);
             });
 
@@ -57,6 +54,26 @@
             card.appendChild(addToBasketButton);
 
         } else if (type === 'small') {
+            /* card elements for basket */
+            const bookImg = document.createElement('img');
+            bookImg.setAttribute('src', this.book.book.imageLink);
+            bookImg.setAttribute('alt','book image');
+
+
+            const author = document.createElement('h3');
+            author.innerHTML = this.book.book.author;
+
+            const title = document.createElement('h2');
+            title.innerHTML = this.book.book.title;
+
+            const price = document.createElement('p');
+            price.innerHTML = this.book.book.price + '$';
+
+            card.appendChild(bookImg);
+            card.appendChild(title);
+            card.appendChild(author);
+            card.appendChild(price);
+
             const wrapper = document.createElement('div');
             wrapper.classList.add('basket__wrapper-qty');
 
@@ -66,8 +83,7 @@
 
             const counter = document.createElement('p');
             counter.classList.add('basket__counter');
-            counter.innerHTML = '1';
-            let counterNumber = Number(counter.innerHTML);
+            counter.innerHTML = String(this.book.count);
 
             const decreaseButton = document.createElement('button');
             decreaseButton.setAttribute('type', 'button');
@@ -78,7 +94,9 @@
 
             const sum = document.createElement('p');
             sum.classList.add('basket__sum');
-            sum.innerHTML = this.book.price + '$';
+            // sum.innerHTML = this.book.book.price + '$';
+            sum.innerHTML = `${this.book.book.price * this.book.count}$`;
+
 
             const closeButton = document.createElement('button');
             closeButton.setAttribute('type', 'button');
@@ -89,37 +107,16 @@
 
             /* events */
             closeButton.addEventListener('click', () => {
-                // basketManager.deleteBook(this.book);
-                basketManager.deleteBookRecord(this.book);
-
+                basketManager.deleteBookRecord(this.book.book);
             })
 
             increaseButton.addEventListener('click', () => {
-                counterNumber++;
-                counter.innerHTML = String(counterNumber);
-                sum.innerHTML = `${this.book.price * counterNumber}$`;
-                console.log('counter',counterNumber);
-                console.log('sum',sum)
-                basketManager.increase(this.book);
-
-
-                // basketManager.updateCost(this.book,parseInt(sum.innerHTML));
-                // basketManager.updateCost(this.book.price,'increase');
-
-                // basket.increaseTotal(this.book.price);
-
+                basketManager.increase(this.book.book);
             })
 
             decreaseButton.addEventListener('click', () => {
-                if (counterNumber > 1) {
-                    let sumNumber = parseInt(sum.innerHTML);
-                    counterNumber--;
-                    counter.innerHTML = String(counterNumber);
-                    sum.innerHTML = `${sumNumber - this.book.price}$`;
-                    basketManager.decrease(this.book);
-
-                    // basketManager.updateCost(this.book.price,'decrease');
-                    // basket.decreaseTotal(this.book.price);
+                if (this.book.count > 1) {
+                    basketManager.decrease(this.book.book);
                 }
             })
 

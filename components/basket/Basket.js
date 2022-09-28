@@ -119,7 +119,7 @@
 
         function createBookCard(arr) {
             arr.forEach((bookRecord)=> {
-                let card = new BookCard(bookRecord.book,'small');
+                let card = new BookCard(bookRecord,'small');
                 card.mount(list);
             })
         }
