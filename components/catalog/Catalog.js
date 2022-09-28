@@ -2,7 +2,7 @@
     function Catalog() {
         /* import */
         const data = window.getData;
-        const BookCard = window.BookCard;
+        const catalogBookCard = window.catalogBookCard;
 
         /* init */
         const catalog = document.createElement('section');
@@ -11,7 +11,7 @@
         const books = JSON.parse(data);
 
         books.forEach(book => {
-            let card = new BookCard(book,'long');
+            let card = new catalogBookCard(book);
             card.mount(catalog);
         })
 
