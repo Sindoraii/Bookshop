@@ -1,0 +1,30 @@
+.modals {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
+.modals__background {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-dark-3xl);
+    opacity: 0.8;
+}
+.popup {
+    width: 50%;
+    position: relative;
+    display: flex;
+    padding: 4px;
+    border: 2px solid var(--color-dark-3xl);
+    background-color: var(--color-primary);
+}
+.modals__description-popup {
+    top: 50%;
+    left:25%;
+}
+.popup__text {
+    width: 96%;
+}
+.popup__close-button {
+    right: 1%;
+}

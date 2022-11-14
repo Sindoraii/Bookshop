@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Details</title>
+    <link href=" https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap;" rel="stylesheet">
+    <link href="../../styles.css" rel="stylesheet">
+</head>
+<body>
+<header class="header" id="top">
+    <figure class="logo">
+        <img class="logo__img" src="../../assets/images/logo.png" draggable="false">
+        <figcaption class="logo__text">StarFox</figcaption>
+    </figure>
+    <a href="../../index.html">
+        <h1 class="header__title">Bookshop</h1>
+    </a>
+</header>
+<div class="wrapper">
+    <main class="content">
+        <form class="content__delivery-form delivery-form" id="deliveryForm" action="#" name="delivery" novalidate>
+            <h2 class="delivery-form__title">Delivery Details</h2>
+            <fieldset class="delivery-form__userInfo userInfo" name="userInfo">
+                <legend class="userInfo__title"> Contacts:</legend>
+                <div class="error-wrapper">
+                    <label for="userName">Name:</label>
+                    <input class="userInfo__input" type="text" id="userName" name="name" minlength="4"
+                           pattern="[A-Za-zА-Яа-я]+" required>
+                </div>
+                <div class="error-wrapper">
+                    <label for="userSurname" class="surname-label">Surname:</label>
+                    <input class="userInfo__input" type="text" id="userSurname" name="surname" minlength="5"
+                           pattern="[A-Za-zА-Яа-я]+" required>
+                </div>
+                <div class="error-wrapper">
+                    <label for="deliveryDate">Delivery date:</label>
+                    <input class="userInfo__input" id="deliveryDate" type="date" name="date" required>
+                </div>
+                <div class="error-wrapper">
+                    <label for="street">Street:</label>
+                    <input class="userInfo__input" type="text" id="street" name="street" minlength="5"
+                           pattern="[A-Za-zА-Яа-я0-9]+" required>
+                </div>
+                <div class="error-wrapper">
+                    <label for="houseNumber">House number:</label>
+                    <input class="userInfo__input" type="number" min="1" id="houseNumber" name="houseNumber" required>
+                </div>
+                <div class="error-wrapper">
+                    <label for="flatNumber">Flat number:</label>
+                    <input class="userInfo__input" type="text" id="flatNumber" name="flatNumber" pattern="[1-9]|[1-9][0-9-]+"
+                           required>
+                </div>
+            </fieldset>
+            <fieldset class="delivery-form__payment payment">
+                <legend class="payment__title">Choose the payment type:</legend>
+                <div class="error-wrapper">
+                    <div class="payment__wrapper">
+                        <input class="payment__input-radio" type="radio" id="payment-1" name="payment" checked>
+                        <label for="payment-1" class="payment__label">Cash</label>
+                    </div>
+                    <div class="payment__wrapper">
+                        <input class="payment__input-radio" type="radio" id="payment-2" name="payment">
+                        <label for="payment-2" class="payment__label">Card</label>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="delivery-form__gifts gifts">
+                <legend class="gifts__title">Choose 2 gifts:</legend>
+                <div class="error-wrapper gifts__inputs">
+                    <div class="gifts__wrapper">
+                        <input class="gifts__input-checkbox" type="checkbox" id="gifts-1" name="gifts">
+                        <label for="gifts-1" class="gifts__label">pack</label>
+                    </div>
+                    <div class="gifts__wrapper">
+                        <input class="gifts__input-checkbox" type="checkbox" id="gifts-2" name="gifts">
+                        <label for="gifts-2" class="gifts__label">postcard</label>
+                    </div>
+                    <div class="gifts__wrapper">
+                        <input class="gifts__input-checkbox" type="checkbox" id="gifts-3" name="gifts">
+                        <label for="gifts-3" class="gifts__label">2% discount to the next time</label>
+                    </div>
+                    <div class="gifts__wrapper">
+                        <input class="gifts__input-checkbox" type="checkbox" id="gifts-4" name="gifts">
+                        <label for="gifts-4" class="gifts__label">branded pen or pencil</label>
+                    </div>
+                </div>
+            </fieldset>
+            <input class="delivery-form__complete button" type="submit" value='Complete' disabled>
+        </form>
+    </main>
+</div>
+<footer class="footer">
+    <a href="#top">Read with us</a>
+    <p>© August 2022</p>
+</footer>
+<script src="deliveryFormSummary/DeliveryFormSummary.js"></script>
+<script src="deliveryFormValidation.js"></script>
+</body>
+</html>
